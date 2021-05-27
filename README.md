@@ -91,27 +91,28 @@ para_to_conll(text)
 tabulate_score(actual_dic, model_dic, model_ent, model_name)
 ```
 
-```python read_conll_file(filename, tag_col)``` takes in the filepath and the column number of the NER tags (0-based indexing). It returns a list with the paragraph of text as the first element and a list containing a list of word and tags as the second argument. eg: 
+```read_conll_file(filename, tag_col)``` takes in the filepath and the column number of the NER tags (0-based indexing). It returns a list with the paragraph of text as the first element and a list containing a list of word and tags as the second argument. eg: 
 ```python 
 para, word_tag_list = read_conll_file('/data/sample_data.txt', 2)
 ```
 
-```python read_file(filename)``` takes in the filepath as the only argument and returns a paragraph of text. eg: 
+```read_file(filename)``` takes in the filepath as the only argument and returns a paragraph of text. eg: 
 ```python 
 para = read_file('/data/sample_data.txt')
 ```
 
-```python clean_para(txt)``` takes in a paragraph of text with embedded taggings within and returns a cleaned paragraph of text. eg: 
+```clean_para(txt)``` takes in a paragraph of text with embedded taggings within and returns a cleaned paragraph of text. eg: 
 ```python 
 cleaned_para = clean_para(text)
 ```
 
-```python para_to_conll(text)``` takes in a paragraph of text and returns a dictionary with keys as NER tags and values as a list of entities that falls within the category. eg: 
+```para_to_conll(text)``` takes in a paragraph of text and returns a dictionary with keys as NER tags and values as a list of entities that falls within the category. eg: 
 ```python 
 model_dic = para_to_conll(text)
- ```
+```
 
-```tabulate_score(actual_dic, model_dic, model_ent, model_name)``` takes in the actual dictionary of the test set, the dictionary predicted by the model, the list of entities recognised by the model and the name of the model. It returns a list which contains the F1, Recall and Precision scores respectively. eg: ```python 
+```tabulate_score(actual_dic, model_dic, model_ent, model_name)``` takes in the actual dictionary of the test set, the dictionary predicted by the model, the list of entities recognised by the model and the name of the model. It returns a list which contains the F1, Recall and Precision scores respectively. eg: 
+```python
 f1_score, recall_score, precision_score, model_name = tabulate_score(actual_dic, model_dic_polyglot, model_ent_polyglot, "Polyglot")
 ```
 
