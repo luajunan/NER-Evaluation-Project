@@ -5,6 +5,8 @@
 The main goal for this project is to evaluate and find out how current existing Named-entity Recognition (NER) models fare across different languages. The framework aims to evaluate the F1, Recall and Precision scores across various Named-entity Recognition (NER) models. These models include Polyglot, SpaCy, NLTK, Deeppavlov, Flair and XLM-Roberta.
 
 ## Getting Started
+
+### Installation of Packages
 If you are running your code on google colab, the installation is as follows
 
 ```python
@@ -54,4 +56,29 @@ from flair.models import SequenceTagger
 
 !pip install tner
 import tner
-model = tner.TransformersNER("asahi417/tner-xlm-roberta-large-ontonotes5")```
+model = tner.TransformersNER("asahi417/tner-xlm-roberta-large-ontonotes5")
+```
+
+### Importing Necessary Modules
+
+```python
+import polyglot as poly
+from polyglot.text import Text, Word
+
+import spacy
+
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.chunk import tree2conlltags
+
+import deeppavlov
+from deeppavlov import configs, build_model
+
+from segtok.segmenter import split_single
+from flair.data import Sentence
+from flair.models import SequenceTagger
+
+import tner
+
+import re
+```
