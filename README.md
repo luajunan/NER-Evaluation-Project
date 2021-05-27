@@ -102,3 +102,15 @@ tabulate_score(actual_dic, model_dic, model_ent, model_name)
 ```python para_to_conll(text)``` takes in a paragraph of text and returns a dictionary with keys as NER tags and values as a list of entities that falls within the category.
 
 ```tabulate_score(actual_dic, model_dic, model_ent, model_name)``` takes in the actual dictionary of the test set, the dictionary predicted by the model, the list of entities recognised by the model and the name of the model. It returns a list which contains the F1, Recall and Precision scores respectively.
+
+#### Models
+```python
+polyglot(text, language_code)
+spa(text, language_code)
+extract_ne_nltk(text)
+extract_ne_deeppavlov(text, space=True)
+extract_ne_flair(text)
+extract_ne_roberta(text, space=True)
+```
+
+All the functions take in a standardized input of a paragraph of text as the first argument. The language_code applies only to the Polyglot and SpaCy models. The argument space is to indicate the presence of spaces between characters/words as some languages like Chinese do not have spaces between each character. All the outputs are standardized to return a list of two elements. The dictionary predicted by the model is the first element and the list of entities recognised by the model is the second element.
