@@ -80,7 +80,7 @@ import tner
 
 import re
 ```
-### Functions And Inputs
+### Functions and Inputs
 
 #### Preprocessing and Evaluation
 ```python
