@@ -2,7 +2,7 @@
 
 ## Project Description
 
-The main goal for this project is to evaluate and find out how current existing Named-entity Recognition (NER) models fare across different languages. The framework aims to evaluate the F1, Recall and Precision scores across various Named-entity Recognition (NER) models. These models include Polyglot, SpaCy, NLTK, Deeppavlov, Flair and XLM-Roberta.
+The main goal for this project is to evaluate and find out how current existing Named-entity Recognition (NER) models fare across different languages. The framework aims to evaluate the F1, Recall and Precision scores across various Named-entity Recognition (NER) models. These models include Polyglot, SpaCy, NLTK, Deeppavlov, Flair and XLM-Roberta. The current framework only accepts 6 languages, namely English, Chinese (Simplified), Bahasa Melayu, Bahasa Indonesian, Vietnamese and Thai.
 
 ## Getting Started
 
@@ -19,14 +19,12 @@ If you are running your code on google colab, the installation is as follows.
 !polyglot download LANG:en
 !polyglot download LANG:ms
 !polyglot download LANG:id
-!polyglot download embeddings2.en
-!polyglot download pos2.en
-!polyglot download embeddings2.id
-!polyglot download pos2.id
-!polyglot download embeddings2.ms
 !polyglot download LANG:vi
-!polyglot download embeddings2.vi
 !polyglot download LANG:th
+!polyglot download embeddings2.en
+!polyglot download embeddings2.id
+!polyglot download embeddings2.ms
+!polyglot download embeddings2.vi
 !polyglot download embeddings2.th
 
 !pip install -U spacy
