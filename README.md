@@ -7,8 +7,8 @@ The main goal for this project is to evaluate and find out how current existing 
 ## Getting Started
 
 ### Installation of Packages
-If you are running your code on google colab, the installation is as follows
-
+If you are running your code on google colab, the installation is as follows.
+(Doing this on google colab might require you to restart the runtime several times due to the overlapping installation of certain packages)
 ```python
 !pip install pypi
 !pip install polyglot
@@ -82,3 +82,23 @@ import tner
 
 import re
 ```
+### Functions And Inputs
+
+#### Preprocessing and Evaluation
+```python
+read_conll_file(filename, tag_col)
+read_file(filename)
+clean_para(txt)
+para_to_conll(text)
+tabulate_score(actual_dic, model_dic, model_ent, model_name)
+```
+
+```python read_conll_file(filename, tag_col)``` takes in the filepath and the column number of the NER tags (0-based indexing). It returns a list with the paragraph of text as the first element and a list containing a list of word and tags as the second argument.
+
+```python read_file(filename)``` takes in the filepath as the only argument and returns a paragraph of text.
+
+```python clean_para(txt)``` takes in a paragraph of text with embedded taggings within and returns a cleaned paragraph of text.
+
+```python para_to_conll(text)``` takes in a paragraph of text and returns a dictionary with keys as NER tags and values as a list of entities that falls within the category.
+
+```tabulate_score(actual_dic, model_dic, model_ent, model_name)``` takes in the actual dictionary of the test set, the dictionary predicted by the model, the list of entities recognised by the model and the name of the model. It returns a list which contains the F1, Recall and Precision scores respectively.
