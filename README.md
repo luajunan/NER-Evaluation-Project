@@ -97,9 +97,13 @@ tabulate_score(actual_dic, model_dic, model_ent, model_name)
 
 ```python clean_para(txt)``` takes in a paragraph of text with embedded taggings within and returns a cleaned paragraph of text. eg: ```python clean_para(text)```
 
-```python para_to_conll(text)``` takes in a paragraph of text and returns a dictionary with keys as NER tags and values as a list of entities that falls within the category. eg: ```python para_to_conll(text)```
+```python para_to_conll(text)``` takes in a paragraph of text and returns a dictionary with keys as NER tags and values as a list of entities that falls within the category. eg: ```python 
+para_to_conll(text)
+ ```
 
-```tabulate_score(actual_dic, model_dic, model_ent, model_name)``` takes in the actual dictionary of the test set, the dictionary predicted by the model, the list of entities recognised by the model and the name of the model. It returns a list which contains the F1, Recall and Precision scores respectively. eg: ```python tabulate_score(actual_dic, model_dic_polyglot, model_ent_polyglot, "Polyglot")```
+```tabulate_score(actual_dic, model_dic, model_ent, model_name)``` takes in the actual dictionary of the test set, the dictionary predicted by the model, the list of entities recognised by the model and the name of the model. It returns a list which contains the F1, Recall and Precision scores respectively. eg: ```python 
+tabulate_score(actual_dic, model_dic_polyglot, model_ent_polyglot, "Polyglot")
+```
 
 #### Models
 ```python
@@ -111,11 +115,15 @@ extract_ne_flair(text)
 extract_ne_roberta(text, space=True)
 ```
 
-All the functions take in a standardized input of a paragraph of text as the first argument. The language_code applies only to the Polyglot and SpaCy models. The argument space is to indicate the presence of spaces between characters/words as some languages like Chinese do not have spaces between each character. All the outputs are standardized to return a list of two elements. The dictionary predicted by the model is the first element and the list of entities recognised by the model is the second element. eg: ```python polyglot(text, 'en')```
+All the functions take in a standardized input of a paragraph of text as the first argument. The language_code applies only to the Polyglot and SpaCy models. The argument space is to indicate the presence of spaces between characters/words as some languages like Chinese do not have spaces between each character. All the outputs are standardized to return a list of two elements. The dictionary predicted by the model is the first element and the list of entities recognised by the model is the second element. eg: 
+```python 
+polyglot(text, 'en')
+```
 
 #### Main
 ```python
 main(filename, language_code, file_type, tag_col=1)
 ```
 
-The main method consolidates all the functions and allows the user to use the framework more conveniently. It takes in the filename as the first input, the language_code, file-type (eg: "conll" or "text") and the tag_col if necessary. This method returns a list of lists where each list contains the F1, Recall, Precision and the name of the model and the outer list contains all the list of scores and models that were evaluated for the dataset. eg: ```python main('/data/sample_data.txt', 'en', 'conll', 2)```
+The main method consolidates all the functions and allows the user to use the framework more conveniently. It takes in the filename as the first input, the language_code, file-type (eg: "conll" or "text") and the tag_col if necessary. This method returns a list of lists where each list contains the F1, Recall, Precision and the name of the model and the outer list contains all the list of scores and models that were evaluated for the dataset. eg: ```python main('/data/sample_data.txt', 'en', 'conll', 2)
+```
