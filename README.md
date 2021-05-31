@@ -84,14 +84,14 @@ import re
 
 #### Preprocessing and Evaluation
 ```python
-read_conll_file(filename, tag_col)
+read_conll_file(filename)
 read_file(filename)
 clean_para(txt)
 para_to_conll(text)
 tabulate_score(actual_dic, model_dic, model_ent, model_name)
 ```
 
-```read_conll_file(filename, tag_col)``` takes in the filepath and the column number of the NER tags (0-based indexing). It returns a list with the paragraph of text as the first element and a list containing a list of word and tags as the second argument. eg: 
+```read_conll_file(filename)``` takes in the filepath as the only argument. It returns a list with the paragraph of text as the first element and a list containing a list of word and tags as the second argument. eg: 
 ```python 
 para, word_tag_list = read_conll_file('/data/sample_data.txt', 2)
 ```
@@ -133,10 +133,10 @@ model_dic_poly, model_ent_poly = polyglot(text, 'en')
 
 #### Main
 ```python
-main(filename, language_code, file_type, tag_col=1)
+main(filename, language_code, file_type)
 ```
 
-The main method consolidates all the functions and allows the user to use the framework more conveniently. It takes in the filename as the first input, the language_code, file-type (eg: "conll" or "text") and the tag_col if necessary. This method returns a list of lists where each list contains the F1, Recall, Precision and the name of the model and the outer list contains all the list of scores and models that were evaluated for the dataset. eg: 
+The main method consolidates all the functions and allows the user to use the framework more conveniently. It takes in the filename as the first input, the language_code, file-type (eg: "conll" or "text"). This method returns a list of lists where each list contains the F1, Recall, Precision and the name of the model and the outer list contains all the list of scores and models that were evaluated for the dataset. eg: 
 ```python 
-results_list = main('/data/sample_data.txt', 'en', 'conll', 2)
+results_list = main('/data/sample_data.txt', 'en', 'conll')
 ```
