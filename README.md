@@ -4,6 +4,27 @@
 
 The main goal for this project is to evaluate and find out how current existing Named-entity Recognition (NER) models fare across different languages. The framework aims to evaluate the F1, Recall and Precision scores across various Named-entity Recognition (NER) models. These models include Polyglot, SpaCy, NLTK, Deeppavlov, Flair and XLM-Roberta. The current framework only accepts 6 languages, namely English, Chinese (Simplified), Bahasa Melayu, Bahasa Indonesian, Vietnamese and Thai.
 
+## Data Standardisation
+
+| Word | Entity |
+|----|----|
+| Tim | B-per | 
+| is | O |
+
+Ensure that the coNLL file is of the following format before the framework can process it as an acceptable input.
+
+## Standard Entity Set
+[BIO tagging](https://medium.com/analytics-vidhya/bio-tagged-text-to-original-text-99b05da6664)
+
+Dion's 0 shot learning model
+* 'B-loc' - Beginning of location
+* 'B-per' - Beginning of person
+* 'B-org' - Beginning of organisation
+* 'I-loc' - Inside of location
+* 'I-per' - Inside of person
+* 'I-org' - Inside of organisation
+* 'O' - Outside
+
 ## Getting Started
 
 ### Installation of Packages
